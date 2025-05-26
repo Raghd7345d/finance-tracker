@@ -3,6 +3,8 @@ import { useRouter } from "expo-router";
 import React, { useEffect } from "react";
 import { Image, StyleSheet, View } from "react-native";
 
+// Emerto comments on this
+
 export default function HomeScreen() {
   // const router = useRouter();
   // useEffect(() => {
