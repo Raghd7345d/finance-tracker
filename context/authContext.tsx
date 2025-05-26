@@ -12,7 +12,6 @@ import {
 } from "firebase/auth";
 import { doc, getDoc, setDoc } from "firebase/firestore";
 import React, { createContext, useContext, useEffect, useState } from "react";
-import { Alert } from "react-native";
 
 export const AuthContext = createContext<AuthContextType | null>(null);
 
@@ -56,6 +55,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
         uid,
         email,
         name,
+        image: null,
       });
 
       await sendEmailVerification(response.user);
@@ -97,6 +97,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
           uid: data.uid || null,
           email: data.email || null,
           name: data.name || null,
+          image: data.image || null,
         };
         setUser({ ...userData });
       }
@@ -108,18 +109,14 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (firebaseUser) => {
       if (firebaseUser) {
-        console.log("User is signed in:", firebaseUser);
         setUser({
           uid: firebaseUser.uid,
           email: firebaseUser.email,
           name: firebaseUser.displayName || null,
         });
         updateUserData(firebaseUser.uid);
-        if (!firebaseUser.emailVerified) {
-          console.warn("Email not verified, redirecting to welcome page.");
-          Alert.alert("Email Verification Required");
-          router.replace("/(auth)/signIn");
-          return;
+        if (firebaseUser.emailVerified) {
+          router.replace("/(tabs)/home");
         }
       } else {
         setUser(null);
