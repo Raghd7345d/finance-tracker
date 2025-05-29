@@ -41,8 +41,6 @@ export default function ForgetPassword() {
         res.msg || "Something went wrong. Please try again."
       );
     }
-
-    console.log("Reset Password Response:", res);
   }
 
   return (

@@ -93,6 +93,7 @@ export type UserDataType = {
   name: string;
   image?: any;
 };
+
 export type AuthContextType = {
   user: UserType;
   setUser: Function;

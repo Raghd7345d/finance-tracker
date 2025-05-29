@@ -20,7 +20,9 @@ export default function ScreenWrapper({ style, children }: ScreenWrapperProps) {
         style,
       ]}
     >
-      <View style={{ paddingTop, flex: 1, backgroundColor: "transparent" }}>
+      <View
+        style={[{ paddingTop, flex: 1, backgroundColor: "transparent" }, style]}
+      >
         <StatusBar barStyle="light-content" />
         {children}
       </View>

@@ -20,6 +20,7 @@ export const colors = {
     light: "#d9ed92", // soft greenish white
     DEFAULT: "#d1fae5", // very light green
     dark: "#064e3b", // deep green
+    veryLightGray: "#F7F8FA",
   },
   border: {
     DEFAULT: "#adb5bd", // gray border

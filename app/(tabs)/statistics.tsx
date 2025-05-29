@@ -1,10 +1,12 @@
+import ScreenWrapper from "@/components/ScreenWrapper";
+import { colors } from "@/constants/theme";
 import React, { Component } from "react";
 import { Text, View } from "react-native";
 
 export default function statistics() {
   return (
-    <View>
+    <ScreenWrapper style={{ backgroundColor: colors.background.veryLightGray }}>
       <Text> textInComponent </Text>
-    </View>
+    </ScreenWrapper>
   );
 }
