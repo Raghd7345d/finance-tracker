@@ -1,5 +1,5 @@
 // transactionService.ts
-import { firestore } from "@/Config/firbase";
+import { firestore } from "@/Config/firebase";
 import { Transaction } from "@/types";
 import { collection, addDoc, Timestamp } from "firebase/firestore";
 
