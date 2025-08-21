@@ -1,7 +1,7 @@
 import Button from "@/components/Button";
 import ScreenWrapper from "@/components/ScreenWrapper";
 import { Typo } from "@/components/Typo";
-import { auth } from "@/Config/firbase";
+import { auth } from "@/Config/firebase";
 import { colors } from "@/constants/theme";
 import { useAuth } from "@/context/authContext";
 import { signOut } from "firebase/auth";

@@ -1,4 +1,4 @@
-import { auth, firestore } from "@/Config/firbase";
+import { auth, firestore } from "@/Config/firebase";
 import { getFriendlyFirebaseErrors } from "@/lip/getFriendlyFirebaseerrors";
 import { AuthContextType, UserType } from "@/types";
 import { useRouter } from "expo-router";
